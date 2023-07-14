@@ -1,20 +1,92 @@
 \documentclass{jsarticle}
 \usepackage[utf8]{inputenc}
-\title{Latex Tips}
-\author{Mao Kanda}
-\date{2023-05-10}
+
+\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{times}
+
+% 画像用のライブラリ
+% \usepackage{graphicx}
+
+\title{期末レポート1}
+\author{学籍番号 : 70810025 \\ 氏名 : 神田 毬央}
+\date{2023-07-15}
 \begin{document}
     \maketitle
+
     \part{Part1}
 
-    \section{First Section}
-    あいうえお
+    % フォントの変更
+    {\rmfamily Roman Font} \\
+    {\sffamily Sans Serif Font} \\
+
+    {\rmfamily Roman Font です。} \\
+    {\sffamily Sans Serif Font です。} \\
+
+    % 目次を入れる
+    \tableofcontents
+
+    % 第1章の本文のフォントは Sans Serif にする
+    % \sffamily % 以降はこのフォントになる
+
+    \section{第1章}
+
+    図\ref{fig:sample}に示す。
+    表\ref{tab:sample}に示す。
+    
+
+    % 箇条書き
+    \begin{itemize}
+        \item 表の入れ方
+        \item 表のキャプションのつけかた
+        \item 表のフォーマット
+        \item 画像の相互参照
+        \item フォントの変更
+        \item 余白の入れ方
+    \end{itemize}
+
+    \input{chapter1.tex}
+
+    % 表を作る
+    \begin{table}[htbp]
+        \centering
+        \caption{Sample Table}
+        \label{tab:sample}
+        % 職員一覧 テスト用
+        \begin{tabular}
+            
+        \end{tabular}
+    \end{table}
+
+    % 画像を張り付ける
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=10cm]{sample.png}
+        \caption{Sample Image}
+        \label{fig:sample}
+    \end{figure}
+
+    % 参考文献を引用
+    この著書\cite{latex}を引用した。あとリガチャテストttl,Te
+
+    % 参考文献リスト
+    \begin{thebibliography}{9}
+        \bibitem{latex} ほげほげ
+    \end{thebibliography}
+
 
     \subsection{Next Section}
     かきくけこ
 
     \subsubsection{Third Section}
     さしすせそ
+
+    % Q : paragraphってなんですか
+    % A : 本文の中で、小見出しのように使う
+
+    % 以下使用例
+    \paragraph{小見出し1} 小見出しは10文字以内にすること。
+    \paragraph{本文} 本文は小見出しの後に書く。100文字以内にすること。
 
     % \begin{comment}
     %     これはコメントです。
